@@ -133,8 +133,14 @@ apt-get install git dnsutils systemd -y > /dev/null 2>&1
 systemctl --version >/dev/null 2>&1 || { echo "systemd is required. Are you using Ubuntu 16.04?"  >&2; exit 1; }
 
 # Get our current IP
+IPV4=$(dig +short myip.opendns.com @resolver1.opendns.com)
+IPV6=$(dig +short -6 myip.opendns.com aaaa @resolver1.ipv6-sandbox.opendns.com)
 if [ -z "$EXTERNALIP" ]; then
-EXTERNALIP=`dig +short myip.opendns.com @resolver1.opendns.com`
+  if [ -n "$IPV4" ]; then
+    EXTERNALIP="$IPV4"
+  else
+    EXTERNALIP="$IPV6"
+  fi
 fi
 clear
 
