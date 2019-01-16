@@ -63,7 +63,7 @@ Restart and unlock your wallet.
 SSH (Putty on Windows, Terminal.app on macOS) to your VPS, login as root (**Please note:** It's normal that you don't see your password after typing or pasting it) and run the following command:
 
 ```bash
-bash <( curl https://raw.githubusercontent.com/VulcanoCrypto/Vulcano-MN-Install/master/install.sh )
+bash <( curl https://raw.githubusercontent.com/mistermint/Vulcano-MN-Install/master/install.sh )
 ```
 
 If you get the error "bash: curl: command not found", run this first: `apt-get -y install curl`
