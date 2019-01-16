@@ -209,10 +209,6 @@ if [ -z "$BOOTSTRAP" ]; then
   read -e -p "Do you want to use our bootstrap file to speed the syncing process? [Y/n] : " BOOTSTRAP
 fi
 
-if [ -z "$TOR" ]; then
-  read -e -p "Would you like to use vulcanod via TOR? [y/N] : " TOR
-fi
-
 clear
 
 # Generate random passwords
